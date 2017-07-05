@@ -42,7 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             deleteButton.isEnabled = true
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
@@ -114,32 +114,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-    struct Meme {
-        var topText: String!
-        var bottomText: String!
-        var originalImage: UIImage!
-        var memedImage: UIImage!
-
-        init (topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
-            self.topText = topText
-            self.bottomText = bottomText
-            self.originalImage = originalImage
-            self.memedImage = memedImage
-        }
-    }
-
     func memeify() -> UIImage {
-        toolBar.isHidden = true
-        self.navigationController?.isNavigationBarHidden = true
-
+        hideNavigationControllers()
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-
-        toolBar.isHidden = false
-        self.navigationController?.isNavigationBarHidden = false
-
+        showNavigationControllers()
         return memedImage
     }
 
@@ -151,6 +132,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
             let meme: Meme = Meme(topText: topTF, bottomText: bottomTF, originalImage: image, memedImage: memedImage)
         }
+    }
+
+    func pickImage(from source: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+
+    func hideNavigationControllers() {
+        toolBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
+
+    }
+
+    func showNavigationControllers() {
+        toolBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
     }
     // MARK: IBActions
 
@@ -174,21 +172,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func cameraButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
+            pickImage(from: .camera)
         } else {
             print("Camera not available")
         }
     }
-    
+
     @IBAction func albumButton(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
-        self.present(pickerController, animated: true, completion: nil)
+        pickImage(from: .photoLibrary)
     }
-
+    
 }
-
