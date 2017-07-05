@@ -41,26 +41,16 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbp-xP-noy">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" id="C5V-qB-huN">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cku-F9-2Zk">
-                                            <rect key="frame" x="16" y="7" width="82" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Camera"/>
-                                            <connections>
-                                                <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebb-q0-TkT"/>
-                                            </connections>
-                                        </button>
+                                    <barButtonItem image="table" id="C5V-qB-huN">
+                                        <connections>
+                                            <action selector="cameraButton:" destination="BYZ-38-t0r" id="Qcd-lf-dx3"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gef-LV-L62"/>
-                                    <barButtonItem style="plain" id="oKi-Dt-GKA">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uak-xJ-yWE">
-                                            <rect key="frame" x="313" y="7" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Album"/>
-                                            <connections>
-                                                <action selector="albumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XpJ-ZL-cWd"/>
-                                            </connections>
-                                        </button>
+                                    <barButtonItem image="collection" id="oKi-Dt-GKA">
+                                        <connections>
+                                            <action selector="albumButton:" destination="BYZ-38-t0r" id="eZI-lx-0jC"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -116,9 +106,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="albumButton" destination="uak-xJ-yWE" id="5Ua-uK-uhE"/>
+                        <outlet property="albumButton" destination="oKi-Dt-GKA" id="vzc-nB-KXF"/>
                         <outlet property="bottomTextField" destination="m7Y-OK-sk9" id="wQI-Ec-0zV"/>
-                        <outlet property="cameraButton" destination="Cku-F9-2Zk" id="02r-6M-xrG"/>
+                        <outlet property="cameraButton" destination="C5V-qB-huN" id="ZQf-5L-fke"/>
                         <outlet property="deleteButton" destination="8Hk-ei-vKP" id="YwM-nT-Hye"/>
                         <outlet property="memeImage" destination="8ng-v6-XGb" id="RZ9-jD-iEU"/>
                         <outlet property="shareButton" destination="92S-6M-kvD" id="iq1-re-7DB"/>
@@ -131,4 +121,8 @@
             <point key="canvasLocation" x="-210.40000000000001" y="130.88455772113943"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>

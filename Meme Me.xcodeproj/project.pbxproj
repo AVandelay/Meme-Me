@@ -14,6 +14,7 @@
 		E2E3112F1F0C7490003EE4F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E3112D1F0C7490003EE4F2 /* LaunchScreen.storyboard */; };
 		E2E311371F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E311361F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift */; };
 		E2E3113D1F0C9646003EE4F2 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3113C1F0C9646003EE4F2 /* Meme.swift */; };
+		E2E3113F1F0C9F11003EE4F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E3113E1F0C9F11003EE4F2 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E2E311301F0C7490003EE4F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2E311361F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
 		E2E3113C1F0C9646003EE4F2 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		E2E3113E1F0C9F11003EE4F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				E2E3112B1F0C7490003EE4F2 /* Assets.xcassets */,
 				E2E3112D1F0C7490003EE4F2 /* LaunchScreen.storyboard */,
 				E2E311301F0C7490003EE4F2 /* Info.plist */,
+				E2E3113E1F0C9F11003EE4F2 /* Images.xcassets */,
 			);
 			path = "Meme Me";
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E3112F1F0C7490003EE4F2 /* LaunchScreen.storyboard in Resources */,
+				E2E3113F1F0C9F11003EE4F2 /* Images.xcassets in Resources */,
 				E2E3112C1F0C7490003EE4F2 /* Assets.xcassets in Resources */,
 				E2E3112A1F0C7490003EE4F2 /* Main.storyboard in Resources */,
 			);
@@ -270,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
 				DEVELOPMENT_TEAM = 9ZUQ33DXCT;
 				INFOPLIST_FILE = "Meme Me/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -283,6 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
 				DEVELOPMENT_TEAM = 9ZUQ33DXCT;
 				INFOPLIST_FILE = "Meme Me/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
