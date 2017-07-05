@@ -36,8 +36,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         if memeImage.image == nil {
             shareButton.isEnabled = false
+            deleteButton.isEnabled = false
         } else {
             shareButton.isEnabled = true
+            deleteButton.isEnabled = true
         }
     }
     
@@ -165,6 +167,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func deleteButton(_ sender: Any) {
+        memeImage.image = nil
+        textFieldStyle(textField: topTextField, text: "TOP")
+        textFieldStyle(textField: bottomTextField, text: "BOTTOM")
     }
 
     @IBAction func cameraButton(_ sender: Any) {
