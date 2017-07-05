@@ -12,6 +12,7 @@
 		E2E3112A1F0C7490003EE4F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E311281F0C7490003EE4F2 /* Main.storyboard */; };
 		E2E3112C1F0C7490003EE4F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E3112B1F0C7490003EE4F2 /* Assets.xcassets */; };
 		E2E3112F1F0C7490003EE4F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E3112D1F0C7490003EE4F2 /* LaunchScreen.storyboard */; };
+		E2E311371F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E311361F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E2E3112B1F0C7490003EE4F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2E3112E1F0C7490003EE4F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2E311301F0C7490003EE4F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E311361F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E2E3112B1F0C7490003EE4F2 /* Assets.xcassets */,
 				E2E3112D1F0C7490003EE4F2 /* LaunchScreen.storyboard */,
 				E2E311301F0C7490003EE4F2 /* Info.plist */,
+				E2E311361F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift */,
 			);
 			path = "Meme Me";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E311271F0C7490003EE4F2 /* ViewController.swift in Sources */,
+				E2E311371F0C7A55003EE4F2 /* MemeTextFieldDelegate.swift in Sources */,
 				E2E311251F0C7490003EE4F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
