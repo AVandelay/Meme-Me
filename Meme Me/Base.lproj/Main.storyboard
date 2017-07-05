@@ -24,6 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GoI-sr-N3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1183" y="131"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -121,6 +122,7 @@
                         <outlet property="deleteButton" destination="8Hk-ei-vKP" id="YwM-nT-Hye"/>
                         <outlet property="memeImage" destination="8ng-v6-XGb" id="RZ9-jD-iEU"/>
                         <outlet property="shareButton" destination="92S-6M-kvD" id="iq1-re-7DB"/>
+                        <outlet property="toolBar" destination="Cbp-xP-noy" id="cZZ-h9-wXy"/>
                         <outlet property="topTextField" destination="u94-sb-i7N" id="SqE-uZ-ckl"/>
                     </connections>
                 </viewController>

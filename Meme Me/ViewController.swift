@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Outlets
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -111,9 +112,56 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
+    struct Meme {
+        var topText: String!
+        var bottomText: String!
+        var originalImage: UIImage!
+        var memedImage: UIImage!
+
+        init (topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
+            self.topText = topText
+            self.bottomText = bottomText
+            self.originalImage = originalImage
+            self.memedImage = memedImage
+        }
+    }
+
+    func memeify() -> UIImage {
+        toolBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
+
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        toolBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
+
+        return memedImage
+    }
+
+    func saveMemedImage(memedImage: UIImage) {
+        if memeImage.image != nil && topTextField != nil && bottomTextField != nil {
+            let topTF = self.topTextField.text!
+            let bottomTF = self.bottomTextField.text!
+            let image = self.memeImage.image!
+
+            let meme: Meme = Meme(topText: topTF, bottomText: bottomTF, originalImage: image, memedImage: memedImage)
+        }
+    }
     // MARK: IBActions
 
     @IBAction func shareButton(_ sender: Any) {
+        let memeToShare = memeify()
+
+        let activityViewController = UIActivityViewController(activityItems: [memeToShare], applicationActivities: nil)
+        activityViewController.completionWithItemsHandler = { activity, success, items, error in
+            if success {
+                self.saveMemedImage(memedImage: memeToShare)
+            }
+        }
+        self.present(activityViewController, animated: true, completion: nil)
     }
 
     @IBAction func deleteButton(_ sender: Any) {
