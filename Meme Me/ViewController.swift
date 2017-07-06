@@ -108,12 +108,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func memeify() -> UIImage {
-        hideNavigationControllers()
+        configureBars(hidden: true)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        showNavigationControllers()
+        configureBars(hidden: false)
         return memedImage
     }
 
@@ -133,16 +133,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
 
-    func hideNavigationControllers() {
-        toolBar.isHidden = true
-        self.navigationController?.isNavigationBarHidden = true
-
+    func configureBars(hidden: Bool) {
+        toolBar.isHidden = hidden
+        self.navigationController?.isNavigationBarHidden = hidden
     }
 
-    func showNavigationControllers() {
-        toolBar.isHidden = false
-        self.navigationController?.isNavigationBarHidden = false
-    }
     // MARK: IBActions
 
     @IBAction func shareButton(_ sender: Any) {
