@@ -34,22 +34,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
 
-        if memeImage.image == nil {
-            shareButton.isEnabled = false
-            deleteButton.isEnabled = false
-        } else {
-            shareButton.isEnabled = true
-            deleteButton.isEnabled = true
-        }
+        shareButton.isEnabled = !(memeImage.image == nil)
+        deleteButton.isEnabled = !(memeImage.image == nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
 
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            cameraButton.isEnabled = false
-        }
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
 
         // text field font and style
         textFieldStyle(textField: topTextField, text: "TOP")
@@ -156,7 +149,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memeToShare = memeify()
 
         let activityViewController = UIActivityViewController(activityItems: [memeToShare], applicationActivities: nil)
-        activityViewController.completionWithItemsHandler = { activity, success, items, error in
+        activityViewController.completionWithItemsHandler = { (_, success, _, _) in
             if success {
                 self.saveMemedImage(memedImage: memeToShare)
             }
